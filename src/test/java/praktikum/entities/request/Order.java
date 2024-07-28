@@ -1,4 +1,4 @@
-package praktikum.requestEntities;
+package praktikum.entities.request;
 
 import lombok.Getter;
 import lombok.Setter;

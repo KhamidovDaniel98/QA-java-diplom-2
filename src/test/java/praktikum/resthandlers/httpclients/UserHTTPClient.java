@@ -2,7 +2,7 @@ package praktikum.resthandlers.httpclients;
 
 import io.restassured.response.Response;
 import praktikum.ApiUrls;
-import praktikum.requestEntities.User;
+import praktikum.entities.request.User;
 
 public class UserHTTPClient extends BaseHTTPClient{
     public Response createUser(User user) {

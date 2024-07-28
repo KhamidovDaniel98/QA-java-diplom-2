@@ -1,8 +1,8 @@
-package praktikum.responseEntities;
+package praktikum.entities.response;
 
 import lombok.Getter;
 import lombok.Setter;
-import praktikum.requestEntities.Ingredient;
+import praktikum.entities.request.Ingredient;
 
 import java.util.List;
 

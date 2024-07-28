@@ -1,4 +1,4 @@
-package praktikum.requestEntities;
+package praktikum.entities.request;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -6,29 +6,29 @@ import lombok.Setter;
 public class Ingredient {
     @Getter
     @Setter
-    String _id;
+    private String _id;
     @Getter @Setter
-    String name;
+    private String name;
     @Getter @Setter
-    String type;
+    private String type;
     @Getter @Setter
-    String proteins;
+    private String proteins;
     @Getter @Setter
-    String fat;
+    private String fat;
     @Getter @Setter
-    String carbohydrates;
+    private String carbohydrates;
     @Getter @Setter
-    String calories;
+    private String calories;
     @Getter @Setter
-    String price;
+    private String price;
     @Getter @Setter
-    String image;
+    private String image;
     @Getter @Setter
-    String image_mobile;
+    private String imageMobile;
     @Getter @Setter
-    String image_large;
+    private String imageLarge;
     @Getter @Setter
-    String __v;
+    private String __v;
 
     public Ingredient() { }
 
@@ -44,8 +44,8 @@ public class Ingredient {
         this.calories = calories;
         this.price = price;
         this.image = image;
-        this.image_mobile = image_mobile;
-        this.image_large = image_large;
+        this.imageMobile = image_mobile;
+        this.imageLarge = image_large;
         this.__v = __v;
     }
 }

@@ -1,8 +1,8 @@
-package praktikum.responseEntities;
+package praktikum.entities.response;
 
 import lombok.Getter;
 import lombok.Setter;
-import praktikum.requestEntities.User;
+import praktikum.entities.request.User;
 
 public class UserResponsed {
     @Getter @Setter

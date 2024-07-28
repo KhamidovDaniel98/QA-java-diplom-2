@@ -7,8 +7,8 @@ import io.restassured.response.Response;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import praktikum.requestEntities.Ingredient;
-import praktikum.responseEntities.IngredientsResponsed;
+import praktikum.entities.request.Ingredient;
+import praktikum.entities.response.IngredientsResponsed;
 import praktikum.resthandlers.apiclients.ResponseChecks;
 import praktikum.resthandlers.apiclients.OrderApiClient;
 import praktikum.resthandlers.apiclients.UserApiClient;
@@ -49,28 +49,31 @@ public class CreateOrderTests {
 
         ingredients = response.body().as(IngredientsResponsed.class).getData();
 
-        if(token == null || ingredients.isEmpty())
+        if (token == null || ingredients.isEmpty())
             fail("Отсутствует токен или не получен список ингредиентов");
     }
+
     @After
     @Step("Удаление тестовых пользователей")
     public void cleanTestData() {
-        if(token == null)
+        if (token == null)
             return;
 
         checks.checkStatusCode(userApi.deleteUser(token), 202);
     }
+
     @Test
     @DisplayName("Создание заказа: с авторизацией и с ингредиентами")
     public void createOrderWithAuthAndIngredientsIsSuccess() {
         Response response = orderApi.createOrder(
-        List.of(ingredients.get(0).get_id(), ingredients.get(ingredients.size() - 1).get_id()),
+                List.of(ingredients.get(0).get_id(), ingredients.get(ingredients.size() - 1).get_id()),
                 token
         );
 
         checks.checkStatusCode(response, 200);
         checks.checkLabelSuccess(response, "true");
     }
+
     @Test
     @DisplayName("Создание заказа: без авторизации и с ингредиентами")
     public void createOrderWithoutAuthAndWithIngredientsIsFailed() {
@@ -81,6 +84,7 @@ public class CreateOrderTests {
 
         checks.checkStatusCode(response, 400);
     }
+
     @Test
     @DisplayName("Создание заказа: с авторизацией и без ингредиентов")
     public void createOrderWithAuthAndWithoutIngredientsIsSuccess() {
@@ -93,6 +97,7 @@ public class CreateOrderTests {
         checks.checkLabelSuccess(response, "false");
         checks.checkLabelMessage(response, "Ingredient ids must be provided");
     }
+
     @Test
     @DisplayName("Создание заказа: с неверным хешем ингредиентов")
     public void createOrderWithAuthAndIncorrectIngredientsIsFailed() {

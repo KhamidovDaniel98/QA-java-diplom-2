@@ -2,7 +2,7 @@ package praktikum.resthandlers.apiclients;
 
 import io.qameta.allure.Step;
 import io.restassured.response.Response;
-import praktikum.requestEntities.Order;
+import praktikum.entities.request.Order;
 import praktikum.resthandlers.httpclients.OrderHTTPClient;
 
 import java.util.List;

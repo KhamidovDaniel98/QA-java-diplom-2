@@ -2,7 +2,7 @@ package praktikum.resthandlers.httpclients;
 
 import io.restassured.response.Response;
 import praktikum.ApiUrls;
-import praktikum.requestEntities.Order;
+import praktikum.entities.request.Order;
 
 public class OrderHTTPClient extends BaseHTTPClient {
     public Response createOrder(Order order, String token) {

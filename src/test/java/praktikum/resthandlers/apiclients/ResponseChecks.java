@@ -4,7 +4,7 @@ import io.qameta.allure.Allure;
 import io.qameta.allure.Step;
 import io.restassured.response.Response;
 import org.hamcrest.MatcherAssert;
-import praktikum.responseEntities.UserResponsed;
+import praktikum.entities.response.UserResponsed;
 
 import static org.hamcrest.Matchers.equalTo;
 
